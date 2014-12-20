@@ -9,3 +9,4 @@
 # https://atom.io/docs/latest/advanced/keymaps
 '.editor':
   'ctrl-shift-e': 'px-to-rem:convert'
+  'cmd-shift-e': 'px-to-rem:convert'
