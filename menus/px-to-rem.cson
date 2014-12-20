@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Toggle px-to-rem'
+      'command': 'px-to-rem:toggle'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'px-to-rem'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'px-to-rem:toggle'
+        }
+      ]
+    ]
+  }
+]

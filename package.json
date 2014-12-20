@@ -1,0 +1,17 @@
+{
+  "name": "px-to-rem",
+  "main": "./lib/px-to-rem",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "activationCommands": {
+    "atom-workspace": "px-to-rem:toggle"
+  },
+  "activationEvents": ["px-to-rem:convert"],
+  "repository": "https://github.com/guzzgm/px-to-rem",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
