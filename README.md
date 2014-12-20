@@ -2,7 +2,9 @@
 
 Responsive it is.
 
-Just a simple package that turn your selected pixels text into rem. Simple as that:
+Just a simple package that turn your selected pixels text into rem for Atom.io.
+
+Simple as that:
 
 1 - Select the the part of the code you want to change.
 
