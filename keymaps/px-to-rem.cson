@@ -7,6 +7,6 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.editor':
+'atom-workspace':
   'ctrl-shift-e': 'px-to-rem:convert'
   'cmd-shift-e': 'px-to-rem:convert'

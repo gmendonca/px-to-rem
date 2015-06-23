@@ -2,8 +2,8 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle px-to-rem'
-      'command': 'px-to-rem:toggle'
+      'label': 'Convert px-to-rem'
+      'command': 'px-to-rem:convert'
     }
   ]
 'menu': [
@@ -13,8 +13,8 @@
       'label': 'px-to-rem'
       'submenu': [
         {
-          'label': 'Toggle'
-          'command': 'px-to-rem:toggle'
+          'label': 'Convert'
+          'command': 'px-to-rem:convert'
         }
       ]
     ]

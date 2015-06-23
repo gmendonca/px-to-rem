@@ -1,18 +1,15 @@
 {
   "name": "px-to-rem",
   "main": "./lib/px-to-rem",
-  "version": "0.3.0",
-  "description": "A short description of your package",
+  "version": "0.4.0",
+  "description": "Change px to rem",
   "activationCommands": {
-    "atom-workspace": "px-to-rem:toggle"
+    "atom-workspace": "px-to-rem:convert"
   },
-  "activationEvents": [
-    "px-to-rem:convert"
-  ],
-  "repository": "https://github.com/guzzgm/px-to-rem",
+  "repository": "https://github.com/gmendonca/px-to-rem",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">=0.174.0 <2.0.0"
   },
   "dependencies": {}
 }

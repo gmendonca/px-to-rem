@@ -9,11 +9,11 @@ pxPattern = /// ^ # begin of line
 
 module.exports = PxToRem =
     activate: ->
-        atom.workspaceView.command "px-to-rem:convert", => @convert()
+        atom.commands.add 'atom-workspace', "px-to-rem:convert", => @convert()
 
     convert: ->
-        editor = atom.workspace.activePaneItem
-        selection = editor.getSelection()
+        editor = atom.workspace.getActivePaneItem()
+        selection = editor.getLastSelection()
         original = text = selection.getText()
         if text.match pxPattern
             text = text.replace /\s+/g, ""

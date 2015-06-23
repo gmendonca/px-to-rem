@@ -12,7 +12,7 @@ describe "PxToRem", ->
     workspaceElement = atom.views.getView(atom.workspace)
     activationPromise = atom.packages.activatePackage('px-to-rem')
 
-  describe "when the px-to-rem:toggle event is triggered", ->
+  describe "when the px-to-rem:convert event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
@@ -20,7 +20,7 @@ describe "PxToRem", ->
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'px-to-rem:toggle'
+      atom.commands.dispatch workspaceElement, 'px-to-rem:convert'
 
       waitsForPromise ->
         activationPromise
@@ -33,7 +33,7 @@ describe "PxToRem", ->
 
         pxToRemPanel = atom.workspace.panelForItem(pxToRemElement)
         expect(pxToRemPanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'px-to-rem:toggle'
+        atom.commands.dispatch workspaceElement, 'px-to-rem:convert'
         expect(pxToRemPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
@@ -49,7 +49,7 @@ describe "PxToRem", ->
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'px-to-rem:toggle'
+      atom.commands.dispatch workspaceElement, 'px-to-rem:convert'
 
       waitsForPromise ->
         activationPromise
@@ -58,5 +58,5 @@ describe "PxToRem", ->
         # Now we can test for view visibility
         pxToRemElement = workspaceElement.querySelector('.px-to-rem')
         expect(pxToRemElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'px-to-rem:toggle'
+        atom.commands.dispatch workspaceElement, 'px-to-rem:convert'
         expect(pxToRemElement).not.toBeVisible()
