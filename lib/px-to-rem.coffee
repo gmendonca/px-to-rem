@@ -12,16 +12,22 @@ module.exports = PxToRem =
         atom.commands.add 'atom-workspace', "px-to-rem:convert", => @convert()
 
     convert: ->
-        editor = atom.workspace.getActivePaneItem()
-        selection = editor.getLastSelection()
-        original = text = selection.getText()
-        if text.match pxPattern
-            text = text.replace /\s+/g, ""
-            num = parseInt(text, 10)/16
-            semicolon = text.slice(-1)
-            if semicolon.match ";"
-                selection.insertText(num + "rem;")
+        editor = atom.workspace.getActiveTextEditor()
+        buffer = editor.getBuffer()
+        selections = editor.getSelections()
+
+        # Group these actions so they can be undone together
+        buffer.transact ->
+          for selection in selections
+
+            original = text = selection.getText()
+            if text.match pxPattern
+                text = text.replace /\s+/g, ""
+                num = parseInt(text, 10)/16
+                semicolon = text.slice(-1)
+                if semicolon.match ";"
+                    selection.insertText(num + "rem;")
+                else
+                    selection.insertText(num + "rem")
             else
-                selection.insertText(num + "rem")
-        else
-            selection.insertText(original)
+                selection.insertText(original)
