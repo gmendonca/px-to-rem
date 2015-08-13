@@ -24,6 +24,8 @@ module.exports = PxToRem =
         buffer = editor.getBuffer()
         selections = editor.getSelections()
 
+        baseSize = atom.config.get('px-to-rem.baseSize')
+
         # Group these actions so they can be undone together
         buffer.transact ->
           for selection in selections
