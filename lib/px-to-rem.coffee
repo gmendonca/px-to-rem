@@ -8,6 +8,14 @@ pxPattern = /// ^ # begin of line
     $ ///i        # end of line and ignore cases
 
 module.exports = PxToRem =
+    config:
+        baseSize:
+            title: 'Default Base Size'
+            description: 'This will change the base size to convert px to rem.'
+            type: 'integer'
+            default: 16
+            minimum: 1
+
     activate: ->
         atom.commands.add 'atom-workspace', "px-to-rem:convert", => @convert()
 
@@ -23,7 +31,7 @@ module.exports = PxToRem =
             original = text = selection.getText()
             if text.match pxPattern
                 text = text.replace /\s+/g, ""
-                num = parseInt(text, 10)/16
+                num = parseInt(text, 10)/baseSize
                 semicolon = text.slice(-1)
                 if semicolon.match ";"
                     selection.insertText(num + "rem;")
