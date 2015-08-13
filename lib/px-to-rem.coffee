@@ -31,7 +31,7 @@ module.exports = PxToRem =
             original = text = selection.getText()
             if text.match pxPattern
                 text = text.replace /\s+/g, ""
-                num = parseInt(text, 10)/baseSize
+                num = parseInt(text, 10)/config.baseSize
                 semicolon = text.slice(-1)
                 if semicolon.match ";"
                     selection.insertText(num + "rem;")
