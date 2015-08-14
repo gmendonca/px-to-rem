@@ -14,6 +14,6 @@ Simple as that:
 ![ScreenShot2] (https://github.com/guzzgm/px-to-rem/blob/master/images/ScreenShot2.png)
 ![ScreenShot3] (https://github.com/guzzgm/px-to-rem/blob/master/images/ScreenShot3.png)
 
-3 - By default, the convert base size is 16. But You can change it under the package settings.
+3 - By default, the convert base size is 16. But you can change it under the package settings.
 
 ![ScreenShot4] (https://github.com/guzzgm/px-to-rem/blob/master/images/ScreenShot4.png)
