@@ -24,8 +24,6 @@ module.exports = PxToRem =
         buffer = editor.getBuffer()
         selections = editor.getSelections()
 
-        baseS = atom.config.get('px-to-rem.baseSize')
-
         # Group these actions so they can be undone together
         buffer.transact ->
           for selection in selections
@@ -33,7 +31,7 @@ module.exports = PxToRem =
             original = text = selection.getText()
             if text.match pxPattern
                 text = text.replace /\s+/g, ""
-                num = parseInt(text, 10)/baseS
+                num = parseInt(text, 10)/atom.config.get('px-to-rem.baseSize')
                 semicolon = text.slice(-1)
                 if semicolon.match ";"
                     selection.insertText(num + "rem;")
