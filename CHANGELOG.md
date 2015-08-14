@@ -11,5 +11,5 @@
 ## 0.4.2
 * Fixed deprecated methods to work with newer version
 
-## 0.5.5
+## 0.5.6
 * Added support for users to change the base size
