@@ -11,5 +11,8 @@
   "engines": {
     "atom": ">=0.174.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "postcss": "^5.0.12",
+    "postcss-pxtorem": "^3.1.0"
+  }
 }

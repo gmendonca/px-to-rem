@@ -1,41 +1,48 @@
-pxPattern = /// ^ # begin of line
-    (\s*)         # zero or more spaces
-    ([0-9]+)      # one or more numbers
-    (\s*)         # zero or more spaces
-    (px)          # followed by px letters
-    (\s*)         # zero or more spaces
-    (;*)          # for cases that the user select within
-    $ ///i        # end of line and ignore cases
+postcss = require 'postcss'
+pxtorem = require 'postcss-pxtorem'
 
 module.exports = PxToRem =
-    config:
-        baseSize:
-            title: 'Default Base Size'
-            description: 'This will change the base size to convert px to rem.'
-            type: 'integer'
-            default: 16
-            minimum: 1
 
-    activate: ->
-        atom.commands.add 'atom-workspace', "px-to-rem:convert", => @convert()
+  config:
+    baseSize:
+      title: 'Default Base Size'
+      description: 'This will change the base size to convert px to rem.'
+      type: 'integer'
+      default: 16
+      minimum: 1
 
-    convert: ->
-        editor = atom.workspace.getActiveTextEditor()
-        buffer = editor.getBuffer()
-        selections = editor.getSelections()
+  activate: ->
+    atom.commands.add 'atom-workspace', 'px-to-rem:convert', => @convert()
 
-        # Group these actions so they can be undone together
-        buffer.transact ->
-          for selection in selections
+  convert: ->
+    editor = atom.workspace.getActiveTextEditor()
+    buffer = editor.getBuffer()
+    selections = editor.getSelections()
 
-            original = text = selection.getText()
-            if text.match pxPattern
-                text = text.replace /\s+/g, ""
-                num = parseInt(text, 10)/atom.config.get('px-to-rem.baseSize')
-                semicolon = text.slice(-1)
-                if semicolon.match ";"
-                    selection.insertText(num + "rem;")
-                else
-                    selection.insertText(num + "rem")
-            else
-                selection.insertText(original)
+    # Group these actions so they can be undone together
+    buffer.transact ->
+      for selection in selections
+
+        css = selection.getText()
+        options = {
+          root_value: atom.config.get 'px-to-rem.baseSize'
+        }
+
+        # Process valid CSS
+        try
+          processedCss = postcss(pxtorem(options)).process(css).css
+          selection.insertText(processedCss)
+
+        catch error
+
+          # Process standalone values
+          try
+            # This is a weird hack. The PostCSS library doesn't work unless
+            # the selection is valid CSS. But we still want selections like
+            # "20px" to work properly, so it gets faked.
+            css = 'font-size:' + css + ';'
+            processedCss = postcss(pxtorem(options)).process(css).css
+            processedCss = processedCss.substring(10, processedCss.length-1)
+            selection.insertText(processedCss)
+          catch error
+            atom.notifications.addWarning "The selection was not valid CSS."
