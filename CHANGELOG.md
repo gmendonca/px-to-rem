@@ -13,3 +13,6 @@
 
 ## 0.5.6
 * Added support for users to change the base size
+
+## 0.6.0
+* Added support to select float numbers too
