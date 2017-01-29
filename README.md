@@ -10,16 +10,18 @@ Just a simple package that turn your selected pixels text into rem for Atom.io.
 
 Simple as that:
 
-1 - Select the the part of the code you want to change, for example '40px'.
+1 - Select the part of the code you want to change, for example '40px;'. And then, type Ctrl+Shift+E (Cmd+Shift+E for Mac users).
 
-2 - Type Ctrl+Shift+E (Cmd+Shift+E for Mac users), and that is it.
+![Select - Step 1](https://github.com/gmendonca/px-to-rem/blob/master/images/image4.png?raw=true)
+![Select - Step 2](https://github.com/gmendonca/px-to-rem/blob/master/images/image5.png?raw=true)
+
+2 - Or you can select a block of text. And then, type Ctrl+Shift+E (Cmd+Shift+E for Mac users).
 
 ![Select all - Step 1](https://github.com/gmendonca/px-to-rem/blob/master/images/image1.png?raw=true)
 ![Select all - Step 2](https://github.com/gmendonca/px-to-rem/blob/master/images/image2.png?raw=true)
-![Select all - Step 3](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image3.png?raw=true)
-![Select - Step 1](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image4.png?raw=true)
-![Select - Step 2](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image5.png?raw=true)
+![Select all - Step 3](https://github.com/gmendonca/px-to-rem/blob/master/images/image3.png?raw=true)
 
-3 - By default, the convert base size is 16. But You can change it under the package settings.
+3 - By default, the base value when converting is 16 and the number of decimal places are unlimited (0).
+Both are configurable in the package setting page.
 
-![ScreenShot4](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/ScreenShot4.png?raw=true)
+![Settings](https://github.com/gmendonca/px-to-rem/blob/master/images/image6.png?raw=true)
