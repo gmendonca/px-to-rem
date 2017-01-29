@@ -70,7 +70,7 @@ describe "PxToRem", ->
       changeHandler.callCount > 0
 
     runs ->
-      expect(editor.getText()).toEqual(`
+      expect(editor.getText()).toEqual("""
       hello
 
 
@@ -92,11 +92,11 @@ describe "PxToRem", ->
 
       1.4375REM
 
-      here`)
+      here""")
 
   it "converts in a css-like file", ->
     editor = atom.workspace.getActiveTextEditor()
-    editor.insertText(`
+    editor.insertText("""
     h1 {
         font-size: 40px;
     }
@@ -107,7 +107,7 @@ describe "PxToRem", ->
 
     p {
         font-size: 14px;
-    }`)
+    }""")
     editor.selectAll()
     changeHandler = jasmine.createSpy('changeHandler')
     editor.onDidChange(changeHandler)
@@ -121,7 +121,7 @@ describe "PxToRem", ->
       changeHandler.callCount > 0
 
     runs ->
-      expect(editor.getText()).toEqual(`
+      expect(editor.getText()).toEqual("""
       h1 {
           font-size: 2.5rem;
       }
@@ -132,4 +132,4 @@ describe "PxToRem", ->
 
       p {
           font-size: 0.875rem;
-      }`)
+      }""")
