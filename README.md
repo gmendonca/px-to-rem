@@ -41,5 +41,3 @@ you can set the number of desired decimal places that will be displayed when con
 Feel free to fork this repository and use it the way you like. If you want to propose a nice new feature, just create a pull request from you forked branch.
 
 [The full list of contributors](https://github.com/gmendonca/px-to-rem/graphs/contributors).
-
-© [Gustavo Mendonca](https://github.com/gmendonca)
