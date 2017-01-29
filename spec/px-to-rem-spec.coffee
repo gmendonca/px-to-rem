@@ -34,7 +34,7 @@ describe "PxToRem", ->
 
   it "select all the text from a file and converts all the ocurrences", ->
     editor = atom.workspace.getActiveTextEditor()
-    editor.insertText(`
+    editor.insertText("""
     hello
 
 
@@ -56,7 +56,7 @@ describe "PxToRem", ->
 
     23PX
 
-    here`)
+    here""")
     editor.selectAll()
     changeHandler = jasmine.createSpy('changeHandler')
     editor.onDidChange(changeHandler)
