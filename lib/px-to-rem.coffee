@@ -11,8 +11,8 @@ numbersPattern = /(\d+(\.)*(\d+)?)/g
 module.exports = PxToRem =
     config:
         baseSize:
-            title: 'Default convertion base size'
-            description: 'This will change the base size when converting px to rem.'
+            title: 'Default base value'
+            description: 'This will change the base value when converting px to rem.'
             type: 'integer'
             default: 16
             minimum: 1
