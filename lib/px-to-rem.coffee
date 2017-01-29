@@ -1,11 +1,12 @@
-pxPattern = /// ^ # begin of line
-    (\s*)         # zero or more spaces
-    (\d+(.\d+)?)  # one or more numbers
-    (\s*)         # zero or more spaces
-    (px)          # followed by px letters
-    (\s*)         # zero or more spaces
-    (;*)          # for cases that the user select within
-    $ ///i        # end of line and ignore cases
+pxPattern =
+  ///
+    (\s*)             # zero or more spaces
+    (\d+(\.)*(\d+)?)  # one or more numbers
+    (\s*)             # zero or more spaces
+    (px)              # followed by px letters
+  ///ig               # ignore cases and global
+
+numbersPattern = /(\d+(\.)*(\d+)?)/g
 
 module.exports = PxToRem =
     config:
@@ -27,15 +28,13 @@ module.exports = PxToRem =
         # Group these actions so they can be undone together
         buffer.transact ->
           for selection in selections
-
-            original = text = selection.getText()
-            if text.match pxPattern
-                text = text.replace /\s+/g, ""
-                num = parseFloat(text)/atom.config.get('px-to-rem.baseSize')
-                semicolon = text.slice(-1)
-                if semicolon.match ";"
-                    selection.insertText(num + "rem;")
-                else
-                    selection.insertText(num + "rem")
-            else
-                selection.insertText(original)
+            original = selection.getText()
+            matches = original.match(pxPattern)
+            for i of matches
+              text = matches[i].replace(/\s+/g, "")
+              num = parseFloat(text.slice(0,-2))/atom.config.get('px-to-rem.baseSize')
+              toReplace = matches[i]
+                            .replace(matches[i].match(numbersPattern), num)
+                            .replace("px", "rem").replace("PX", "REM")
+              original = original.replace(matches[i], toReplace)
+          selection.insertText(original)
