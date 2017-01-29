@@ -14,8 +14,8 @@ Simple as that:
 
 2 - Type Ctrl+Shift+E (Cmd+Shift+E for Mac users), and that is it.
 
-![Select all - Step 1](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image1.png?raw=true)
-![Select all - Step 2](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image2.png?raw=true)
+![Select all - Step 1](https://github.com/gmendonca/px-to-rem/blob/master/images/image1.png?raw=true)
+![Select all - Step 2](https://github.com/gmendonca/px-to-rem/blob/master/images/image2.png?raw=true)
 ![Select all - Step 3](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image3.png?raw=true)
 ![Select - Step 1](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image4.png?raw=true)
 ![Select - Step 2](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image5.png?raw=true)
