@@ -1,7 +1,7 @@
 pxPattern =
   ///
     (\s*)             # zero or more spaces
-    (\d+(\.)*(\d+)?)  # one or more numbers
+    (\d+(\.)*(\d+)?)  # integers or decimal numbers
     (\s*)             # zero or more spaces
     (px)              # followed by px letters
   ///ig               # ignore cases and global
@@ -25,9 +25,11 @@ module.exports = PxToRem =
         buffer = editor.getBuffer()
         selections = editor.getSelections()
 
+
         # Group these actions so they can be undone together
         buffer.transact ->
           for selection in selections
+            console.log selection.isEmpty
             original = selection.getText()
             matches = original.match(pxPattern)
             for i of matches
@@ -37,4 +39,4 @@ module.exports = PxToRem =
                             .replace(matches[i].match(numbersPattern), num)
                             .replace("px", "rem").replace("PX", "REM")
               original = original.replace(matches[i], toReplace)
-          selection.insertText(original)
+            selection.insertText(original)
