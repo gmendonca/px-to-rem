@@ -14,9 +14,11 @@ Simple as that:
 
 2 - Type Ctrl+Shift+E (Cmd+Shift+E for Mac users), and that is it.
 
-![ScreenShot1](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/ScreenShot1.png?raw=true)
-![ScreenShot2](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/ScreenShot2.png?raw=true)
-![ScreenShot3](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/ScreenShot3.png?raw=true)
+![Select all - Step 1](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image1.png?raw=true)
+![Select all - Step 2](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image2.png?raw=true)
+![Select all - Step 3](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image3.png?raw=true)
+![Select - Step 1](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image4.png?raw=true)
+![Select - Step 2](https://raw.githubusercontent.com/gmendonca/px-to-rem/blob/master/images/image5.png?raw=true)
 
 3 - By default, the convert base size is 16. But You can change it under the package settings.
 
